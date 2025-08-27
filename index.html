@@ -1,99 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inventory QC Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searchable DH Name</title>
 
-<link href="style.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</button>
-
-<div class="form-container">
-<h2>Inventory QC Form</h2>
-
-<label>DH Name</label>
-<select id="dhName" required>
-  <option value="">Select DH</option>
-  <!-- all options same as before -->
-</select>
-
-<label>LPN Number</label>
-<div style="display:flex; gap:5px;">
-  <input type="text" id="lpnNumber" required>
-  <button type="button" onclick="openScanner('lpnNumber')">📷</button>
-</div>
-
-<label>LPN Qty</label>
-<input type="number" id="lpnQty" required>
-
-<label>Physical Qty</label>
-<input type="number" id="phyQty" required>
-
-<label>Difference Qty</label>
-<input type="number" id="diffQty" readonly>
-
-<label>Suggest / Remarks</label>
-<select id="remarks">
-  <option>Equal</option>
-  <option>Short</option>
-  <option>Excess</option>
-</select>
-
-<label>Condition</label>
-<select id="condition">
-  <option selected>Good</option>
-  <option>Damage</option>
-  <option>Mismatch</option>
-</select>
-
-<label>SKU</label>
-<div style="display:flex; gap:5px;">
-  <input type="text" id="sku">
-  <button type="button" onclick="openScanner('sku')">📷</button>
-</div>
-
-<label>Price</label>
-<input type="number" id="price">
-
-<label>Total Value</label>
-<input type="number" id="totalValue" readonly>
-
-<label>Status</label>
-<select id="status">
-  <option>Non QC</option>
-  <option>QC Done</option>
-</select>
-
-<label>Employee Name</label>
-<input type="text" id="empName" required>
-
-<label>Auditor Name</label>
-<select id="auditor">
-  <option value="">Select Auditor</option>
-  <option>Arjun MY</option>
-  <option>Kishor Pandit</option>
-  <option>Jeet Kumar</option>
-  <option>Sagar Pandit</option>
-</select>
-
-<button type="submit">Submit</button>
-
-</div>
-
-<!-- Scanner Modal -->
-<div id="scannerModal" class="scanner-modal">
-  <div>
-    <div id="reader" class="scanner-box"></div>
+  <div class="form-group">
+    <label for="dhName">DH Name</label>
+    <select id="dhName">
+      <option value="">Select DH Name</option>
+      <option>BLR-BTM-2</option>
+      <option>BLR-BTM LAYOUT NEW</option>
+      <option>BLR-RICHMOND TOWN</option>
+      <option>BLR-JP Nagar</option>
+      <option>BLR-BANASHANKARI</option>
+      <option>BLR-Mathikere</option>
+      <option>BLR-Kalyan Nagar Network</option>
+      <option>BLR-Chickpet New</option>
+      <option>BLR-SHIVAJI NAGAR</option>
+      <option>BLR-Cholayakanakalli</option>
+      <option>BLR-Jakkur New</option>
+      <option>BLR-Jakkur Network</option>
+      <option>BLR-HEBBAL NEW</option>
+      <option>BLR-Nikoo Home New</option>
+      <option>BLR-TC Palaya</option>
+      <option>BLR-Devanahalli</option>
+      <option>BLR-Yelahanka Network</option>
+      <option>BLR-Nehru Nagar</option>
+      <option>BLR-GUNJUR</option>
+      <option>BLR-HSR-3</option>
+      <option>BLR-Narayana reddy Layout</option>
+      <option>BLR-Kannika Nagar</option>
+      <option>BLR-GUNJUR Network</option>
+      <option>BLR-Mico layout network-2</option>
+      <option>BLR-Bannerghatta Network 2</option>
+      <option>BLR-BANNERGHATTA</option>
+      <option>BLR-Kambhipura</option>
+      <option>BLR-JP NAGAR New</option>
+      <option>BLR-KALYAN NAGAR NEW</option>
+      <option>BLR-Challakere</option>
+      <option>BLR-Koramangala Network</option>
+      <option>BLR-Hennur New</option>
+      <option>BLR-Dasarahalli</option>
+      <option>BLR-SHIVAJI NAGAR Network</option>
+      <option>BLR-Margosa road</option>
+      <option>BLR-Banjara Layout</option>
+      <option>BLR-Ramamurthy Nagar Network</option>
+      <option>BLR-BASAVANAPURA NETWORK 2</option>
+      <option>BLR-Bagalur</option>
+      <option>BLR-RWF Yelahanka</option>
+      <option>BLR-BHADRAPPA LAYOUT NETWORK</option>
+      <option>BLR-Bhadrapppa Layout</option>
+      <option>BLR-HBR Layout</option>
+      <option>BLR-Dooravani Nagar</option>
+      <option>BLR-Nagavara</option>
+      <option>BLR-Narayanapura</option>
+      <option>BLR-YELAHANKA</option>
+      <option>BLR-Kasturinagar</option>
+      <option>BLR-Vidyaranyapura</option>
+      <option>BLR-Kogilu Road</option>
+      <option>BLR-Narayanapura Network</option>
+      <option>BLR-INDIRANAGAR NEW</option>
+      <option>BLR-Malleshwaram new</option>
+      <option>BLR-RAMAMURTHY NAGAR NEW</option>
+    </select>
   </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode"></script>
-<script src="script.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
 </html>
