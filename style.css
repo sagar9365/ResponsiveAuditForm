@@ -1,14 +1,1 @@
-body { font-family: Arial; margin: 20px; background: #f9f9f9; color:#222; transition:0.3s;}
-body.dark { background:#121212; color:#eee;}
-.form-container { max-width:600px; margin:auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);}
-body.dark .form-container { background:#1e1e1e;}
-label { font-weight:bold; margin-top:10px; display:block;}
-input, select { width:100%; padding:8px; margin-top:5px; border:1px solid #ccc; border-radius:5px; }
-button { margin-top:15px; padding:10px; background:#007bff; border:none; color:#fff; border-radius:5px; cursor:pointer; width:100%;}
-button:hover { background:#0056b3;}
 
-.scanner-modal { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;}
-.scanner-box { width:90vw; max-width:300px; height:90vw; max-height:300px; background:#000; border-radius:10px; }
-.close-btn { margin-top:10px; padding:6px 12px; background:red; border:none; color:#fff; border-radius:5px; cursor:pointer; }
-
-.dark-toggle { margin-bottom:15px; }
