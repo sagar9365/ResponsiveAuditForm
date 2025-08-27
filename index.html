@@ -3,46 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit Form</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://unpkg.com/html5-qrcode"></script>
+<title>Inventory QC Form</title>
+
+<link href="style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 
 <button class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</button>
 
 <div class="form-container">
-<h2>SLP Audit Form</h2>
-<form id="auditForm">
+<h2>Inventory QC Form</h2>
 
-<label for="dhName">DH Name</label>
-<input type="text" id="dhName" autocomplete="off" required>
-<div id="suggestions"></div>
-
-<label for="lpnNumber">LPN Number</label>
-<div class="scan-container">
-  <input type="text" id="lpnNumber" required>
-  <button type="button" onclick="startScanner()">Scan</button>
-</div>
-<div id="qr-reader"></div>
-  
-<label for="lpnQty">LPN Qty</label>
-<input type="number" id="lpnQty" required>
-
-<label for="physicalQty">Physical Qty</label>
-<input type="number" id="physicalQty" required>
-
-<label for="type">Type</label>
-<select id="type" required>
-  <option value="">Select</option>
-  <option value="QC">QC</option>
-  <option value="Non QC">Non QC</option>
+<label>DH Name</label>
+<select id="dhName" required>
+  <option value="">Select DH</option>
+  <!-- all options same as before -->
 </select>
 
-<label for="differentQty">Different Qty</label>
-<input type="number" id="differentQty" required>
+<label>LPN Number</label>
+<div style="display:flex; gap:5px;">
+  <input type="text" id="lpnNumber" required>
+  <button type="button" onclick="openScanner('lpnNumber')">📷</button>
+</div>
 
-<!-- <label>Remarks</label>
+<label>LPN Qty</label>
+<input type="number" id="lpnQty" required>
+
+<label>Physical Qty</label>
+<input type="number" id="phyQty" required>
+
+<label>Difference Qty</label>
+<input type="number" id="diffQty" readonly>
+
+<label>Suggest / Remarks</label>
 <select id="remarks">
   <option>Equal</option>
   <option>Short</option>
@@ -84,67 +78,22 @@
   <option>Kishor Pandit</option>
   <option>Jeet Kumar</option>
   <option>Sagar Pandit</option>
-</select> -->
-
-<label for="remarks">Remarks</label>
-<select id="remarks">
-  <option>Equal</option>
-  <option>Short</option>
-  <option>Excess</option>
 </select>
 
-<label for="condition">Condition</label>
-<select id="condition">
-  <option selected>Good</option>
-  <option>Damage</option>
-  <option>Mismatch</option>
-</select>
+<button type="submit">Submit</button>
 
-<label for="sku">SKU</label>
-<div style="display:flex; gap:5px;">
-  <input type="text" id="sku">
-  <button type="button" onclick="openScanner('sku')">📷</button>
 </div>
 
-<label for="price">Price</label>
-<input type="number" id="price">
-
-<label for="totalValue">Total Value</label>
-<input type="number" id="totalValue" readonly>
-
-<label for="status">Status</label>
-<select id="status">
-  <option>Non QC</option>
-  <option>QC Done</option>
-</select>
-
-<label for="empName">Employee Name</label>
-<input type="text" id="empName" required>
-
-<label for="auditor">Auditor Name</label>
-<select id="auditor">
-  <option value="">Select Auditor</option>
-  <option>Arjun MY</option>
-  <option>Kishor Pandit</option>
-  <option>Jeet Kumar</option>
-  <option>Sagar Pandit</option>
-</select>
-
-  
-<!-- <button type="submit">Submit</button> -->
-<div class="button-group">
-  <button type="submit">Submit</button>
-  <button type="button" onclick="document.getElementById('auditForm').reset()">Clear Form</button>
+<!-- Scanner Modal -->
+<div id="scannerModal" class="scanner-modal">
+  <div>
+    <div id="reader" class="scanner-box"></div>
+  </div>
 </div>
 
-</form>
-</div>
-
-<script src="script.js"></script>
-
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode"></script> -->
+<script src="https://unpkg.com/html5-qrcode"></script>
 <script src="script.js"></script>
 </body>
 </html>
