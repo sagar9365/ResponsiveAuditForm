@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLP Audit Form</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<button class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</button>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="form.html">SLP Audit Form</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="form-container">
+  <h2>SLP Audit Form</h2>
+  <form id="auditForm">
+
+    <label>DH Name</label>
+    <input type="text" id="dhName" placeholder="Search DH Name" required>
+
+    <label>LPN Number</label>
+    <div class="flex-row">
+      <input type="text" id="lpnNumber" required>
+      <button type="button" onclick="openScanner('lpnNumber')">📷</button>
+    </div>
+
+    <label>LPN Qty</label>
+    <input type="number" id="lpnQty" required>
+
+    <label>Physical Qty</label>
+    <input type="number" id="phyQty" required>
+
+    <label>Difference Qty</label>
+    <input type="number" id="diffQty" readonly>
+
+    <label>Suggest / Remarks</label>
+    <select id="remarks">
+      <option>Equal</option>
+      <option>Short</option>
+      <option>Excess</option>
+    </select>
+
+    <label>Condition</label>
+    <select id="condition">
+      <option selected>Good</option>
+      <option>Damage</option>
+      <option>Mismatch</option>
+    </select>
+
+    <label>SKU</label>
+    <div class="flex-row">
+      <input type="text" id="sku">
+      <button type="button" onclick="openScanner('sku')">📷</button>
+    </div>
+
+    <label>Price</label>
+    <input type="number" id="price">
+
+    <label>Total Value</label>
+    <input type="number" id="totalValue" readonly>
+
+    <label>Status</label>
+    <select id="status">
+      <option>Non QC</option>
+      <option>QC Done</option>
+    </select>
+
+    <label>Employee Name</label>
+    <input type="text" id="empName" required>
+
+    <label>Auditor Name</label>
+    <select id="auditor">
+      <option value="">Select Auditor</option>
+      <option>Arjun MY</option>
+      <option>Kishor Pandit</option>
+      <option>Jeet Kumar</option>
+      <option>Sagar Pandit</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Scanner Modal -->
+<div id="scannerModal" class="scanner-modal">
+  <div>
+    <div id="reader" class="scanner-box"></div>
+  </div>
+</div>
+
+</body>
+</html>
