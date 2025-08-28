@@ -148,12 +148,15 @@ function openScanner(fieldId){
 
   $("#scannerModal").css("display","flex");
 
-  // Get cameras and start the first available one
   Html5Qrcode.getCameras().then(cameras => {
     if(cameras && cameras.length){
+      // Try to find rear camera
+      let rearCamera = cameras.find(cam => /back|rear|environment/i.test(cam.label));
+      let cameraId = rearCamera ? rearCamera.id : cameras[0].id;
+
       scanner = new Html5Qrcode("reader");
       scanner.start(
-        { deviceId: { exact: cameras[0].id } },
+        { deviceId: { exact: cameraId } },
         { fps:20, qrbox:300 },
         (decodedText)=>{
           $("#"+currentField).val(decodedText);
@@ -170,6 +173,7 @@ function openScanner(fieldId){
     $("#scannerModal").hide();
   });
 }
+
 
 function closeScanner(){
   if(scanner){
