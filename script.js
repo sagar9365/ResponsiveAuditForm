@@ -62,7 +62,7 @@ function openScanner(fieldId){
 
   scanner = new Html5Qrcode("reader");
   scanner.start(
-    { facingMode:{ ideal: "environment" } },
+    { facingMode:{ exact: "environment" } },
     { fps:20, qrbox:300, aspectRatio:1.0 },
     (decodedText)=>{
       $("#"+currentField).val(decodedText);
