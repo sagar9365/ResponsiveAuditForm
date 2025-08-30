@@ -139,18 +139,17 @@ body.dark .input-with-icon input {
 .icon-btn {
   position: absolute;
   right: 5px; /* icon ko input ke right me shift kiya */
-  top: 50%;
+  top: 0%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
   cursor: pointer;
   font-size: 20px;
   color: #555;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  transition: color 0.3s;
-}
+  padding: 0 10px; /* sirf 10px left-right clickable area */
+  height: auto;
+  width: auto;
+  line-height: 1
 
 .icon-btn:hover {
   color: #007bff;
