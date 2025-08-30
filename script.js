@@ -179,7 +179,7 @@ $(document).ready(function(){
 
 
 // ==== Dark / Light Mode Toggle ====
-const toggleBtn = document.getElementById("themeToggle");
+const toggleBtn = document.getElementById("toggleDark");
 const body = document.body;
 
 // Default light mode
