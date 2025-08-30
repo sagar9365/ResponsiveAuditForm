@@ -148,7 +148,7 @@ body.dark .input-with-icon input {
   color: #555;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   transition: color 0.3s;
 }
 
@@ -166,7 +166,7 @@ body.dark .input-with-icon input {
   bottom:0;
   background: rgba(0,0,0,0.8);
   z-index: 1000;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
