@@ -118,7 +118,7 @@ button:hover {
 
 /* ===== Scanner Modal ===== */
 .scanner-modal {
-  display: none;
+  display: none; /* default hidden */
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +126,6 @@ button:hover {
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -136,6 +135,7 @@ button:hover {
   height: 250px;
   background: #000;
   border-radius: 10px;
+  display: none; /* only show when camera starts */
   transition: width 0.3s, height 0.3s;
 }
 
