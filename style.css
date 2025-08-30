@@ -1,29 +1,15 @@
 /* ===== Body & Dark Mode ===== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   margin: 0;
   background: #f9f9f9;
   color: #222;
-  transition: background 0.3s, color 0.3s;
-}
-
-body.light {
-  background: #ffffff;
-  color: #222;
+  transition: 0.3s;
 }
 
 body.dark {
   background: #121212;
-  color: #eeeeee;
-}
-
-.dark-toggle {
-  cursor: pointer;
-  font-size: 20px;
-  background: none;
-  border: none;
-  margin: 10px;
-  transition: color 0.3s;
+  color: #eee;
 }
 
 /* ===== Header Bar ===== */
@@ -37,13 +23,26 @@ body.dark {
 }
 
 .header-bar a {
-  color: inherit;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
 .header-bar a:hover {
   text-decoration: underline;
+}
+
+.header-bar .center button {
+  background: #fff;
+  color: #007bff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-bar .center button:hover {
+  background: #e0e0e0;
 }
 
 /* ===== Form Container ===== */
@@ -54,12 +53,10 @@ body.dark {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: background 0.3s, color 0.3s;
 }
 
 body.dark .form-container {
   background: #1e1e1e;
-  color: #eee;
 }
 
 /* ===== Form Elements ===== */
@@ -69,28 +66,16 @@ label {
   display: block;
 }
 
-input,
-select,
-button {
+input, select, button {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
   border-radius: 5px;
   font-size: 14px;
-  box-sizing: border-box;
 }
 
-input,
-select {
+input, select {
   border: 1px solid #ccc;
-  background: #fff;
-}
-
-body.dark input,
-body.dark select {
-  background: #2a2a2a;
-  border-color: #555;
-  color: #eee;
 }
 
 button {
@@ -110,54 +95,11 @@ button:hover {
 .flex-row {
   display: flex;
   gap: 5px;
-  align-items: center;
-}
-
-/* ===== Input with Icon (Camera) ===== */
-.input-with-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-with-icon input {
-  width: 100%;
-  padding-right: 40px; /* camera icon ke liye space */
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  height: 35px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-body.dark .input-with-icon input {
-  background: #2a2a2a;
-  border-color: #555;
-  color: #eee;
-}
-
-.icon-btn {
-  position: absolute;
-  right: 5px; /* icon ko input ke right me shift kiya */
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #555;
-  padding: 0 10px; /* sirf 10px left-right clickable area */
-  height: auto;
-  width: auto;
-  line-height: 1
-
-.icon-btn:hover {
-  color: #007bff;
 }
 
 /* ===== Scanner Modal ===== */
 .scanner-modal {
-  display: none; /* default hidden */
+  display: none;
   position: fixed;
   top:0;
   left:0;
@@ -195,13 +137,4 @@ body.dark .input-with-icon input {
     width: 300px;
     height: 300px;
   }
-
-  .input-with-icon input {
-    padding-right: 35px;
-  }
-
-  .icon-btn {
-    font-size: 18px;
-  }
 }
-
