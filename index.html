@@ -44,10 +44,20 @@
     <label>DH Name</label>
     <input type="text" id="dhName" placeholder="Search DH Name" required>
 
-    <label>LPN Number</label>
+<!--     <label>LPN Number</label>
     <div class="flex-row">
       <input type="text" id="lpnNumber" required>
       <button type="button" onclick="openScanner('lpnNumber')">📷</button>
+    </div> -->
+
+    <div class="form-group">
+      <label>LPN Number</label>
+      <div class="input-with-icon">
+        <input type="text" id="lpnNumber" placeholder="Enter LPN Number" required>
+        <button type="button" onclick="openScanner('lpnNumber')" class="icon-btn">
+          📷
+        </button>
+      </div>
     </div>
 
     <label>LPN Qty</label>
@@ -73,10 +83,20 @@
       <option>Mismatch</option>
     </select>
 
-    <label>SKU</label>
+<!--     <label>SKU</label>
     <div class="flex-row">
       <input type="text" id="sku">
       <button type="button" onclick="openScanner('sku')">📷</button>
+    </div> -->
+
+    <div class="form-group">
+      <label>SKU</label>
+      <div class="input-with-icon">
+        <input type="text" id="sku" placeholder="Enter SKU">
+        <button type="button" onclick="openScanner('sku')" class="icon-btn">
+          📷
+        </button>
+      </div>
     </div>
 
     <label>Price</label>
