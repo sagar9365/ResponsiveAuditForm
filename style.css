@@ -7,14 +7,14 @@ body {
   transition: 0.3s;
 }
 
-body.dark {
-  background: #121212;
-  color: #eee;
+body.light {
+      background: #ffffff;
+      color: #222222;
 }
 
-body.light {
-  background: #fff;
-  color: #222;
+body.dark {
+  background: #121212;
+  color: #eeeeee;
 }
 
 .dark-toggle {
@@ -22,6 +22,7 @@ body.light {
   font-size: 20px;
   background: none;
   border: none;
+  margin: 10px;
 }
 
 /* ===== Header Bar ===== */
