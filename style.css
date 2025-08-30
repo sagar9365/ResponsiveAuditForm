@@ -12,6 +12,17 @@ body.dark {
   color: #eee;
 }
 
+body.light {
+  background: #fff;
+  color: #222;
+}
+.dark-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+}
+
 /* ===== Header Bar ===== */
 .header-bar {
   display: flex;
