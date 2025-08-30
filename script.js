@@ -45,10 +45,23 @@ $(document).ready(function(){
 
 });
 
-// Dark mode
-function toggleDark(){
-  document.body.classList.toggle("dark");
-}
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  // Default light mode
+  body.classList.add("light");
+
+  toggleBtn.addEventListener("click", () => {
+    if (body.classList.contains("light")) {
+      body.classList.remove("light");
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️"; // show sun when dark mode is ON
+    } else {
+      body.classList.remove("dark");
+      body.classList.add("light");
+      toggleBtn.textContent = "🌙"; // show moon when light mode is ON
+    }
+  });
 
 // Scanner
 let scanner;
